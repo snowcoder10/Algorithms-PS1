@@ -10,6 +10,11 @@ def main():
     print(count_non_anagrams(lines))
 
 
+def main(raw_input):
+
+    count_non_anagrams(raw_input)
+
+
 # This function will take the dictionary, sort the words individually, then sort the list as a whole, then count the
 # non-anagrams.
 def count_non_anagrams(raw_dict):
