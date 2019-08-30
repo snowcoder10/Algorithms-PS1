@@ -37,16 +37,15 @@ def count_non_anagrams_hashing(raw_dict):
 
     sorted_dict.sort()
 
-    for i in range(0,len(sorted_dict)):
-        if i == 0:
-            if sorted_dict[i] != sorted_dict[i+1]:
-                count = count + 1
-        elif i == len(sorted_dict) -1:
-            if sorted_dict[i] != sorted_dict[i-1]:
-                count = count + 1
-        else:
-            if sorted_dict[i] != sorted_dict[i-1] and sorted_dict[i] != sorted_dict[i+1]:
-                count = count + 1
+    if sorted_dict[0] != sorted_dict[1]:
+        count = count + 1
+
+    if sorted_dict[-1] != sorted_dict[-2]:
+        count = count + 1
+
+    for i in range(1, len(sorted_dict)-1):
+        if sorted_dict[i] != sorted_dict[i-1] and sorted_dict[i] != sorted_dict[i+1]:
+            count = count + 1
 
     return count
 
