@@ -4,26 +4,7 @@ import sys
 def main():
     lines = sys.stdin.readlines()
 
-    # print(count_non_anagrams_jumble(lines))
-
     print(count_non_anagrams_hashing(lines))
-
-
-def count_non_anagrams_jumble(raw_dict):
-
-    dictionary = raw_dict[1:]
-
-    solutions = []
-    rejected = []
-    for word in dictionary:
-        sorted_word = sorted(word.lower())
-        if sorted_word in solutions:
-            solutions.remove(sorted_word)
-            rejected.append(sorted_word)
-        elif sorted_word not in rejected:
-            solutions.append(sorted_word)
-
-    return len(solutions)
 
 
 def count_non_anagrams_hashing(raw_dict):
