@@ -1,23 +1,32 @@
 import sys
 
 
+# Author: Kevin Castell
+# PS1 for CS 4150 Algorithms
 def main():
+    # read input
     lines = sys.stdin.readlines()
 
-    print(count_non_anagrams_hashing(lines))
+    print(count_non_anagrams(lines))
 
 
-def count_non_anagrams_hashing(raw_dict):
+# This function will take the dictionary, sort the words individually, then sort the list as a whole, then count the
+# non-anagrams.
+def count_non_anagrams(raw_dict):
 
+    # The information about the sizes is ignored
     dictionary = raw_dict[1:]
     sorted_dict = []
     count = 0
 
+    # Sort the words
     for word in dictionary:
         sorted_dict.append(sorted(word.lower()))
 
+    # Sort the list
     sorted_dict.sort()
 
+    # Check for unique words
     if sorted_dict[0] != sorted_dict[1]:
         count = count + 1
 
